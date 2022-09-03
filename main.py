@@ -228,7 +228,7 @@ def onmessage(update,bot:ObigramClient):
         tl_admin_user = os.environ.get('tl_admin_user')
 
         #set in debug
-        tl_admin_user = 'demian@2008'
+        #tl_admin_user = 'obidevel'
 
         jdb = JsonDatabase('database')
         jdb.check_create()
@@ -248,7 +248,7 @@ def onmessage(update,bot:ObigramClient):
         else:
             mensaje = "🚷 No tienes Acceso 🚷"
             reply_markup = inlineKeyboardMarkup(
-                r1=[inlineKeyboardButton('⚙Contactar Soporte⚙',url='@demian2008')]
+                r1=[inlineKeyboardButton('⚙Contactar Soporte⚙',url='https://t.me/obidevel')]
             )
             bot.sendMessage(update.message.chat.id,mensaje,reply_markup=reply_markup)
             return
@@ -806,7 +806,7 @@ def main():
     bot_token = os.environ.get('bot_token')
     print('init bot.')
     #set in debug
-    bot_token = '5495079265:AAHjhcna03KLCpc2qnYON49x2RCzV4Kn_O0'
+    #bot_token = '5350913309:AAHdMDFYF8Aeh-lkU1uHfKAPvSnXVg3oUYI'
     bot = ObigramClient(bot_token)
     bot.onMessage(onmessage)
     bot.onCallbackData('/cancel ',cancel_task)
